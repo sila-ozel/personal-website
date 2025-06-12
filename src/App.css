@@ -1,0 +1,56 @@
+.tourney-header-thin {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  font-size: 15vh;
+}
+.tourney-header-thick {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  font-size: 15vh;
+}
+
+.col:first-child {
+  transition: transform 0.1s linear;
+}
+
+.col:last-child {
+  transition: transform 0.1s linear;
+}
+
+.next-section {
+  margin-top: 40vh;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.next-section > * {
+  margin-bottom: 2rem;
+  padding-bottom: 5rem;
+}
+.about-me {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;;
+}
+
+img {
+  width: 5rem;
+  padding: 1rem;
+  height: auto;
+}
+
+img.photos {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
