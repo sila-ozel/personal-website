@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
-import grad from './assets/grad.JPG';
-import github_logo from './assets/GitHub_Logo.png';
-import linkedin_logo from './assets/LI-In-Bug.png';
-import background from './assets/background.jpeg'
+import grad from './assets/grad.JPG'
+import github_logo from './assets/GitHub_Logo.png'
+import linkedin_logo from './assets/LI-In-Bug.png'
 import Photos from '../components/Photos.jsx'
+import background from './assets/background.jpeg'
 
 function App() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -71,15 +71,9 @@ function App() {
     backgroundColor: '#151413',
     color: '#E9E9E9',
   }
-
-  const gradPath = '/personal-website/' + grad;
-  const githubLogoPath = '/personal-website/' + github_logo;
-  const linkedinLogoPath = '/personal-website/' + linkedin_logo;
-  const backgroundPath = '/personal-website/' + background;
-
   return (
     <div style={styles}>
-      <div style={{backgroundImage: `url(${backgroundPath})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '75vh', position: 'relative'}}>
+      <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '75vh', position: 'relative'}}>
         <div style={{paddingLeft: '25%', paddingRight: '25%', paddingTop: '10%', overflow: 'hidden'}} className="row">
         <div className='col' style={leftTransform}>
           <p style={{textAlign: 'center'}} className='tourney-header-thin'>SILA</p>
@@ -100,7 +94,7 @@ function App() {
       <div className='next-section'>
         <div className='row'>
           <div className='col-md-3'>
-            <img style={{ maxWidth: '100%', height: '20rem', width: 'auto', borderRadius: '50%'}} src={gradPath} alt='Description of image'/>
+            <img style={{ maxWidth: '100%', height: '20rem', width: 'auto', borderRadius: '50%'}} src={grad} alt='Description of image'/>
           </div>
           <div style={{textAlign: 'left'}} className='col'>
             <h3>About Me</h3>
@@ -109,10 +103,10 @@ function App() {
               <div className='col'>
                 <div className='social-icons'>
                   <a href='https://github.com/sila-ozel' target='_blank' rel='noopener noreferrer'>
-                    <img src={githubLogoPath} alt='GitHub Logo' />
+                    <img src={github_logo} alt='GitHub Logo' />
                   </a>
                   <a href='https://www.linkedin.com/in/s%C4%B1la-%C3%B6zel-0b9625242/' target='_blank' rel='noopener noreferrer'>
-                    <img src={linkedinLogoPath} alt='LinkedIn Logo' />
+                    <img src={linkedin_logo} alt='LinkedIn Logo' />
                   </a>
                 </div>
               </div>

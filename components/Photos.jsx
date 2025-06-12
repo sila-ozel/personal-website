@@ -53,7 +53,7 @@ function Photos() {
     };
     const photos = import.meta.glob('../photos/*.{jpg,jpeg,png}', { eager: true });
     const photoData = Object.values(photos).map((photo, index) => ({
-        src: '/personal-website/' + photo.default,
+        src: photo.default,
         alt: `Photo ${index + 1}`,
         caption: `Photo ${index + 1} caption`
     }));
