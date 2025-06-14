@@ -5,6 +5,8 @@ import github_logo from './assets/GitHub_Logo.png'
 import linkedin_logo from './assets/LI-In-Bug.png'
 import Photos from '../components/Photos.jsx'
 import background from './assets/background.jpeg'
+import Navbar from '../components/Navbar.jsx'
+import Projects from '../components/Projects.jsx'
 
 function App() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -73,6 +75,7 @@ function App() {
   }
   return (
     <div style={styles}>
+      <Navbar/>
       <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '75vh', position: 'relative'}}>
         <div style={{paddingLeft: '25%', paddingRight: '25%', paddingTop: '10%', overflow: 'hidden'}} className="row">
         <div className='col' style={leftTransform}>
@@ -92,7 +95,7 @@ function App() {
         </div>
       </div> */}
       <div className='next-section'>
-        <div className='row'>
+        <div id='about' className='row'>
           <div className='col-md-3'>
             <img style={{ maxWidth: '100%', height: '20rem', width: 'auto', borderRadius: '50%'}} src={grad} alt='Description of image'/>
           </div>
@@ -114,8 +117,15 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='photo-gallery'>
+      <div id='projects' className='projects-section'>
+        <Projects/>
+      </div>
+      <div id='photos' className='photo-gallery'>
         <Photos/>
+      </div>
+      <div style={{ width: '90vw', margin: '0 auto', paddingTop: '10vh'}} className='contact' id='contact'>
+        <h2>Contact Me</h2>
+        <p style={{marginBottom: 0}}>If you would like to get in touch, feel free to reach out via email at <a href='mailto:sila.ozel.cs@gmail.com'>sila.ozel.cs@gmail.com</a>.</p>
       </div>
       
     </div>

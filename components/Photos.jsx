@@ -58,7 +58,11 @@ function Photos() {
         caption: `Photo ${index + 1} caption`
     }));
     return (
-        <div className='slider-container' style={{ width: '80%', margin: '0 auto', padding: '20px 0' }}>
+        <div className='slider-container' style={{ width: '90vw', margin: '0 auto', padding: '20px 0' }}>
+            <div className='photos-header'>
+                <h2>Photos</h2>
+                <p>Here are some of my favorite photos from my travels and experiences.</p>
+            </div>
             <Slider {...settings}>
                 {photoData.map((photo, index) => (
                     <PhotoCard key={index} photo={photo} />
