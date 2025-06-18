@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background-color-light);
 }
 
 body {
@@ -29,7 +30,6 @@ body {
 }
 
 #root {
-  min-height: 100vh;
   background-color: var(--background-color-light);
   overflow: hidden;
 }

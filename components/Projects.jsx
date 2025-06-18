@@ -6,7 +6,10 @@ import mlproject from '../projects/ml_project.png';
 import handcrafted from '../projects/handcrafted.png';
 import parameter from '../projects/parameter.png';
 import commitsense from '../projects/Logo.jpeg';
+import React from 'react';
+
 function Projects() {
+    const [expandedStates, setExpandedStates] = React.useState({});
     const settings = {
         dots: true,
         infinite: true,
@@ -72,6 +75,13 @@ function Projects() {
         }
     ];
 
+    const toggleReadMore = (index) => {
+        setExpandedStates(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
+
     return (
         <div style={{ width: '90vw', margin: '0 auto', paddingBottom: '10vh' }} className='projects'>
             <h2>Projects</h2>
@@ -80,20 +90,29 @@ function Projects() {
                     <div key={index} className='project-card'>
                         <div className='project-content'>
                             <h4>{project.alt}</h4>
-                        <img
-                            className='project-image'
-                            src={project.src}
-                            alt={project.alt}
-                            style={{
-                                width: '90%',
-                                height: '300px',
-                                padding: '10px'
-                            }}
-                        />
-                        <p style={{width: '90%', textAlign: 'justify'}}>{project.caption}</p>
-                        <p><strong>Technologies:</strong> {project.technologies.map((element, index) => (
-                            <span style={{margin: '1%'}} className="badge rounded-pill text-bg-dark">{element}</span>
-                        ))}</p>
+                            <img
+                                className='project-image'
+                                src={project.src}
+                                alt={project.alt}
+                                style={{
+                                    width: '100%',
+                                    height: '300px'
+                                }}
+                            />
+                            <p style={{ textAlign: 'justify' }}>
+                                {expandedStates[index] 
+                                    ? project.caption 
+                                    : `${project.caption.slice(0, 150)}...`}
+                                <span 
+                                    onClick={() => toggleReadMore(index)}
+                                    style={{ color: '#007bff', cursor: 'pointer', marginLeft: '5px' }}
+                                >
+                                    {expandedStates[index] ? 'Read Less' : 'Read More'}
+                                </span>
+                            </p>
+                            <p><strong>Technologies:</strong> {project.technologies.map((element, index) => (
+                                <span style={{margin: '1%'}} className="badge rounded-pill text-bg-dark">{element}</span>
+                            ))}</p>
                         </div>
                     </div>
                 ))}
