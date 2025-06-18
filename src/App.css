@@ -59,12 +59,46 @@ nav {
   
 }
 
-.project-card {
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: var(--box-shadow);
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-button.slick-prev:before, button.slick-next:before {
-  color: gray;
+.content {
+  flex: 1;
+  width: 100%;
+}
+
+.project-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-content {
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.259);
+  margin: 1rem;
+  background: rgba(255, 251, 241, 0.157);
+  backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.photos-header {
+  margin-bottom: 2rem;
+}
+
+.slider-container {
+  padding: 2rem 0;
+}
+
+.social-icons img {
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
 }

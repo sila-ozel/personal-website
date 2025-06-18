@@ -67,67 +67,68 @@ function App() {
   };
 
   const styles = mode === 'light' ? {
-    backgroundColor: '#FFF4E8',
+    backgroundColor: 'var(--background-color-light',
     color: '#000',
   } : {
     backgroundColor: '#151413',
     color: '#E9E9E9',
   }
   return (
-    <div style={styles}>
+    <div className="app-container" style={styles}>
       <Navbar/>
-      <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '75vh', position: 'relative'}}>
-        <div style={{paddingLeft: '25%', paddingRight: '25%', paddingTop: '10%', overflow: 'hidden'}} className="row">
-        <div className='col' style={leftTransform}>
-          <p style={{textAlign: 'center'}} className='tourney-header-thin'>SILA</p>
-        </div>
-        <div className='col' style={rightTransform}>
-          <p style={{textAlign: 'center'}} className='tourney-header-thick'>OZEL</p>
-        </div>
-      </div>
-      </div>
-      {/* Add next sections here */}
-      {/* <div className='next-section'>
-        <p className='fade-up'>Welcome to my personal website!</p>
-        <div className='fade-up' style={{ transitionDelay: '0.2s' }}>
-          <h2>About Me</h2>
-          <p>Software Developer & Designer</p>
-        </div>
-      </div> */}
-      <div className='next-section'>
-        <div id='about' className='row'>
-          <div className='col-md-3'>
-            <img style={{ maxWidth: '100%', height: '20rem', width: 'auto', borderRadius: '50%'}} src={grad} alt='Description of image'/>
+      <div className="content">
+        <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '75vh', position: 'relative'}}>
+          <div style={{paddingLeft: '25%', paddingRight: '25%', paddingTop: '10%', overflow: 'hidden'}} className="row">
+          <div className='col' style={leftTransform}>
+            <p style={{textAlign: 'center'}} className='tourney-header-thin'>SILA</p>
           </div>
-          <div style={{textAlign: 'left'}} className='col'>
-            <h3>About Me</h3>
-            <p className='about-me'>Hi! I'm Sila, a recent computer science graduate from Bilkent University. This is my personal website where you can get more information about me! Keep scrolling or navigate to the section you are interested in.</p>
-            <div className='row'>
-              <div className='col'>
-                <div className='social-icons'>
-                  <a href='https://github.com/sila-ozel' target='_blank' rel='noopener noreferrer'>
-                    <img src={github_logo} alt='GitHub Logo' />
-                  </a>
-                  <a href='https://www.linkedin.com/in/s%C4%B1la-%C3%B6zel-0b9625242/' target='_blank' rel='noopener noreferrer'>
-                    <img src={linkedin_logo} alt='LinkedIn Logo' />
-                  </a>
+          <div className='col' style={rightTransform}>
+            <p style={{textAlign: 'center'}} className='tourney-header-thick'>OZEL</p>
+          </div>
+        </div>
+        </div>
+        {/* Add next sections here */}
+        {/* <div className='next-section'>
+          <p className='fade-up'>Welcome to my personal website!</p>
+          <div className='fade-up' style={{ transitionDelay: '0.2s' }}>
+            <h2>About Me</h2>
+            <p>Software Developer & Designer</p>
+          </div>
+        </div> */}
+        <div className='next-section'>
+          <div id='about' className='row'>
+            <div className='col-md-3'>
+              <img style={{ maxWidth: '100%', height: '20rem', width: 'auto', borderRadius: '50%'}} src={grad} alt='Description of image'/>
+            </div>
+            <div style={{textAlign: 'left'}} className='col'>
+              <h3>About Me</h3>
+              <p className='about-me'>Hi! I'm Sila, a recent computer science graduate from Bilkent University. This is my personal website where you can get more information about me! Keep scrolling or navigate to the section you are interested in.</p>
+              <div className='row'>
+                <div className='col'>
+                  <div className='social-icons'>
+                    <a href='https://github.com/sila-ozel' target='_blank' rel='noopener noreferrer'>
+                      <img src={github_logo} alt='GitHub Logo' />
+                    </a>
+                    <a href='https://www.linkedin.com/in/s%C4%B1la-%C3%B6zel-0b9625242/' target='_blank' rel='noopener noreferrer'>
+                      <img src={linkedin_logo} alt='LinkedIn Logo' />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div id='projects' className='projects-section'>
+          <Projects/>
+        </div>
+        <div id='photos' className='photo-gallery'>
+          <Photos/>
+        </div>
+        <div style={{ width: '90vw', margin: '0 auto', paddingTop: '10vh'}} className='contact' id='contact'>
+          <h2>Contact Me</h2>
+          <p style={{marginBottom: 0}}>If you would like to get in touch, feel free to reach out via email at <a href='mailto:sila.ozel.cs@gmail.com'>sila.ozel.cs@gmail.com</a>.</p>
+        </div>
       </div>
-      <div id='projects' className='projects-section'>
-        <Projects/>
-      </div>
-      <div id='photos' className='photo-gallery'>
-        <Photos/>
-      </div>
-      <div style={{ width: '90vw', margin: '0 auto', paddingTop: '10vh'}} className='contact' id='contact'>
-        <h2>Contact Me</h2>
-        <p style={{marginBottom: 0}}>If you would like to get in touch, feel free to reach out via email at <a href='mailto:sila.ozel.cs@gmail.com'>sila.ozel.cs@gmail.com</a>.</p>
-      </div>
-      
     </div>
   )
 }

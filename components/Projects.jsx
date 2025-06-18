@@ -78,7 +78,8 @@ function Projects() {
             <Slider {...settings}>
                 {projects.map((project, index) => (
                     <div key={index} className='project-card'>
-                        <h4>{project.alt}</h4>
+                        <div className='project-content'>
+                            <h4>{project.alt}</h4>
                         <img
                             className='project-image'
                             src={project.src}
@@ -93,6 +94,7 @@ function Projects() {
                         <p><strong>Technologies:</strong> {project.technologies.map((element, index) => (
                             <span style={{margin: '1%'}} className="badge rounded-pill text-bg-dark">{element}</span>
                         ))}</p>
+                        </div>
                     </div>
                 ))}
             </Slider>
