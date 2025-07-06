@@ -58,3 +58,7 @@ footer {
   padding-top: 20vh;
   background: var(--background-color-light) !important;
 }
+
+button.slick-prev::before, button.slick-next::before {
+  color:gray !important;
+}

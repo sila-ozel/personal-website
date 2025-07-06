@@ -10,6 +10,7 @@ import React from 'react';
 
 function Projects() {
     const [expandedStates, setExpandedStates] = React.useState({});
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
     const settings = {
         dots: true,
         infinite: true,
@@ -96,13 +97,13 @@ function Projects() {
                                 alt={project.alt}
                                 style={{
                                     width: '100%',
-                                    height: '300px'
+                                    height: '50%'
                                 }}
                             />
                             <p style={{ textAlign: 'justify' }}>
                                 {expandedStates[index] 
                                     ? project.caption 
-                                    : `${project.caption.slice(0, 150)}...`}
+                                    : (isMobile ? `${project.caption.slice(0,60)}...`:`${project.caption.slice(0, 150)}...`)}
                                 <span 
                                     onClick={() => toggleReadMore(index)}
                                     style={{ color: '#007bff', cursor: 'pointer', marginLeft: '5px' }}
