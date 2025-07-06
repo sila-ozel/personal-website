@@ -1,12 +1,11 @@
-# React + Vite
+# Personal Website
+This is my personal website. Check [here](https://sila-ozel.github.io/personal-website/)!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+For favicon (in public/favicon-32x32.png) licensing read the following:
 
-Currently, two official plugins are available:
+This favicon was generated using the following graphics from Twitter Twemoji:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Graphics Title: 1f5a4.svg
+- Graphics Author: Copyright 2020 Twitter, Inc and other contributors (https://github.com/twitter/twemoji)
+- Graphics Source: https://github.com/twitter/twemoji/blob/master/assets/svg/1f5a4.svg
+- Graphics License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
