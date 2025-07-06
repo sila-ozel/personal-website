@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
-import grad from './assets/mezuniyet_2.JPG'
+import grad from './assets/mezuniyet_2.jpg'
 import github_logo from './assets/GitHub_Logo.png'
 import linkedin_logo from './assets/LI-In-Bug.png'
 import Photos from '../components/Photos.jsx'
