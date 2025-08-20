@@ -39,7 +39,8 @@
 .about-me {
   font-size: 1.4rem;
   padding-top: 2rem;
-  padding-bottom: 2rem;;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
 }
 
 img {
@@ -55,8 +56,9 @@ img.photos {
 }
 
 nav {
-  background-color: var(--background-color-light);
-  
+  background-color: rgba(32, 32, 32, 0.299);
+  backdrop-filter: blur(10px);
+  color: var(--text-color-dark);
 }
 
 .app-container {
@@ -79,8 +81,10 @@ nav {
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.259);
   margin: 1rem;
-  background: rgba(255, 251, 241, 0.157);
+  /* background: rgba(255, 251, 241, 0.157); */
+  background: linear-gradient( rgba(28, 27, 25, 0.422), rgba(70, 69, 67, 0.251));
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(78, 77, 74, 0.251);
 }
 
 .project-card:hover {

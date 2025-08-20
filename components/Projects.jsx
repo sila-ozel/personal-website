@@ -85,7 +85,7 @@ function Projects() {
 
     return (
         <div style={{ width: '90vw', margin: '0 auto', paddingBottom: '10vh' }} className='projects'>
-            <h2>Projects</h2>
+            <h2>Software Projects</h2>
             <Slider {...settings}>
                 {projects.map((project, index) => (
                     <div key={index} className='project-card'>
@@ -97,7 +97,8 @@ function Projects() {
                                 alt={project.alt}
                                 style={{
                                     width: '100%',
-                                    height: '50%'
+                                    height: '50%',
+                                    borderRadius: '10px'
                                 }}
                             />
                             <p style={{ textAlign: 'justify' }}>
