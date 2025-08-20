@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar.jsx'
 import Projects from '../components/Projects.jsx'
 import CaseStudies from '../components/CaseStudies.jsx'
 import { Route, Routes } from 'react-router'
+import { Abla } from '../components/CaseStudies.jsx'
 
 function Home({ rightTransform, leftTransform }) {
   return(
@@ -129,6 +130,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/personal-website/" element={<Home rightTransform={rightTransform} leftTransform={leftTransform} />} />
+        <Route path="/personal-website/Abla" element={<Abla />} />
         {/* Add more routes here if needed */}
       </Routes>
     </div>

@@ -106,3 +106,21 @@ nav {
 .social-icons img:hover {
   transform: scale(1.1);
 }
+
+.case-study-container {
+  margin: 2rem 10%;
+  border: 1px solid rgba(78, 77, 74, 0.251);
+  padding: 2rem;
+  background: radial-gradient( rgba(28, 27, 25, 0.422), rgba(70, 69, 67, 0.251));
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.259);
+}
+
+.abla-logo {
+  margin: auto;
+  display: block;
+  width: 18rem;
+  height: auto;
+  border-radius: 10px;
+}

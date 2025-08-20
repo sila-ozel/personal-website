@@ -5,10 +5,15 @@ import abla from '../projects/Group 54.png';
 import character from '../projects/Group 28.png';
 import parameter_desktop from '../projects/parameter_desktop.png';
 import React from 'react';
+import abla_logo from '../projects/Abla_Logo.png';
+import abla_mockup from '../projects/Abla_Mockup.png';
+import abla_ui from '../projects/Abla_UI.png';
+import { useNavigate } from 'react-router';
 
 function CaseStudies() {
     const [expandedStates, setExpandedStates] = React.useState({});
     const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+    const navigate = useNavigate();
     const settings = {
         dots: true,
         infinite: true,
@@ -75,7 +80,7 @@ function CaseStudies() {
                                     <h4>{project.alt}</h4>
                                 </div>
                                 <div className='col-4'>
-                                    <button style={{borderRadius:"5px", border: '1px solid #007bff', color: '#007bff', backgroundColor: 'transparent'}}>View Details</button>
+                                    <button onClick={() => navigate(`/personal-website/${project.alt}`)} style={{borderRadius:"5px", border: '1px solid #007bff', color: '#007bff', backgroundColor: 'transparent'}}>View Details</button>
                                 </div>
                             </div>
                             <img
@@ -102,6 +107,128 @@ function CaseStudies() {
                     </div>
                 ))}
             </Slider>
+        </div>
+    );
+}
+
+export const Abla = () => {
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+
+    React.useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return (
+        <div>
+            
+            <div className='case-study-container'>
+                <img className='abla-logo' src={abla_logo} alt="Abla Logo" />
+                <h2>Overview 👓</h2>
+                <p>Abla is a mobile app I designed as a passion project. It aims to help women learn about sexual and menstrual health as well as track their cycles and birth controls. I tried to create a user-friendly and warm interface to make users feel at ease.</p>
+                <h2>Problem 🔍</h2>
+                <p>Abla is a mobile app designed to teach sexual and menstrual health to adults and young adults. The app will provide a safe space for people, especially women, to learn about sexual health and ask intimate questions to professionals. Abla means big sister in Turkish. This app will be like a big sister for those who need it. They can learn about and ask sexual questions without feeling judged.</p>
+            </div>
+            <div className='case-study-container'>
+                <h2>Why is it an important problem? 💫</h2>
+                <div>
+                    <p>There is a gap in the Turkish national educational system. Adolescents do not have a formal sexual education. They learn about menstruation and overall sexual health during secondary school biology lessons. However, they are never taught about sexuality and safe sex measures.</p>
+                </div>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: isMobile ? 'column' : 'row',
+                        gap: '2rem',
+                        alignItems: isMobile ? 'flex-start' : 'center'
+                    }}
+                    className='row-12'
+                >
+                    <div className='col-4'>
+                        <p style={{color:'pink', fontSize: "5rem"}}>66%</p><p>of girls have no idea what a period is.</p>
+                    </div>
+                    <div className='col-4'>
+                        <p style={{color:'pink', fontSize: "5rem"}}>33%</p><p>of young people does not know how to protect themselves from sexually transmitted infections.</p>
+                    </div>
+                    <div className='col-4'>
+                        <p style={{color:'pink', fontSize: "5rem"}}>3 million</p><p> girls have unsafe abortions due to unwanted pregnancies every year.</p>
+                    </div>
+                </div>
+            </div>
+            <div className='case-study-container'>
+                <div>
+                    <h2>Personas 🧍🏼‍♀️</h2>
+                <p>To understand the target audience better, I created 3 personas.</p>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: isMobile ? 'column' : 'row',
+                        gap: '2rem',
+                        alignItems: isMobile ? 'stretch' : 'center',
+
+                    }}
+                    className='row-12'
+                >
+                    <div
+                        className='col-3'
+                        style={{
+                            width: isMobile ? '100%' : '33%',
+                            padding: isMobile ? '1rem' : '0'
+                        }}
+                    >
+                        <h3>Zeynep</h3>
+                        <ul>
+                            <li>Age: 11</li>
+                            <li>Got her first period but she does not know what to do.</li>
+                            <li>She heard about periods, but, she is not prepared.</li>
+                        </ul>
+                    </div>
+                    <div
+                        className='col-3'
+                        style={{
+                            width: isMobile ? '100%' : '33%',
+                            padding: isMobile ? '1rem' : '0'
+                        }}
+                    >
+                        <h3>Yasemin</h3>
+                        <ul>
+                            <li>Age: 16</li>
+                            <li>She does not know much about sex and safe sex practices.</li>
+                            <li>She saw some posts on social media, but, wants to learn from reliable resources.</li>
+                            <li>She is afraid to ask questions about sex.</li>
+                        </ul>
+                    </div>
+                    <div
+                        className='col-4'
+                        style={{
+                            width: isMobile ? '100%' : '33%',
+                            padding: isMobile ? '1rem' : '0'
+                        }}
+                    >
+                        <h3>Amy</h3>
+                        <ul>
+                            <li>Age: 22</li>
+                            <li>She is sexually active but does not use protection.</li>
+                            <li>She wants to learn about contraceptives and safe sex practices.</li>
+                            <li>She feels ashamed to ask for help.</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div className='case-study-container'>
+                <h2>Solution 🛠️</h2>
+                <p>There are several femtech apps available that also touch on these topics. However, there are some gaps in the market. To my knowledge many of the period tracking apps do not have a built-in "Chat with a professional" feature. This is a crucial addition that could provide users with immediate access to expert advice and support. Additionally, they do not have a map that shows nearby clinics, pharmacies, or markets that sell sexual health products. Upon these points, I pinpointed distinctive features to include in Abla.</p>
+                <h4>Key Features ✨</h4>
+                <ol>
+                    <li>Talk to a professional.</li>
+                    <li>Include a map of nearby clinics and pharmacies.</li>
+                    <li>Provide verified guides and articles for educational purposes.</li>
+                    <li>Offer an optional period and birth control tracker/reminder.</li>
+                    <li>Keep the app as privacy preserving as possible.</li>
+                </ol>
+                <img style={{ width: '50vh', display: 'block', margin: '2rem auto' }} src={abla_mockup}></img>
+            </div>
         </div>
     );
 }

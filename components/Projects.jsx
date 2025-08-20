@@ -113,7 +113,7 @@ function Projects() {
                                 </span>
                             </p>
                             <p><strong>Technologies:</strong> {project.technologies.map((element, index) => (
-                                <span style={{margin: '1%'}} className="badge rounded-pill text-bg-dark">{element}</span>
+                                <span style={{margin: '1.5%'}} className="badge rounded-pill text-bg-light">{element}</span>
                             ))}</p>
                         </div>
                     </div>
