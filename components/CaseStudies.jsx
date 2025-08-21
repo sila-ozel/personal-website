@@ -7,6 +7,13 @@ import parameter_desktop from '../projects/parameter_desktop.png';
 import React from 'react';
 import abla_logo from '../projects/Abla_Logo.png';
 import abla_mockup from '../projects/Abla_Mockup.png';
+import zeynep_user_journey from '../projects/Zeynep_User_Journey.png';
+import yasemin_user_journey from '../projects/Yasemin_User_Journey.png';
+import amy_user_journey from '../projects/Amy_User_Journey.png';
+import abla_ui from '../projects/Abla_UI_2.png';
+import abla_wireframe_1 from '../projects/Abla_wireframe_1.png';
+import abla_wireframe_2 from '../projects/Abla_wireframe_2.png';
+import abla_wireframe_3 from '../projects/Abla_wireframe_3.png';
 
 function AblaModal({ show, onClose }) {
     const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
@@ -150,6 +157,14 @@ function AblaModal({ show, onClose }) {
                             </ul>
                         </div>
                     </div>
+                    <h2>User Journeys</h2>
+                    <p>Below are the user journeys for each persona.</p>
+                    <h3>Zeynep</h3>
+                    <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={zeynep_user_journey} alt="Zeynep User Journey" />
+                    <h3>Yasemin</h3>
+                    <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={yasemin_user_journey} alt="Yasmin User Journey" />
+                    <h3>Amy</h3>
+                    <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={amy_user_journey} alt="Amy User Journey" />
                 </div>
                 <h2>Solution 🛠️</h2>
                 <p>There are several femtech apps available that also touch on these topics. However, there are some gaps in the market. To my knowledge many of the period tracking apps do not have a built-in "Chat with a professional" feature. This is a crucial addition that could provide users with immediate access to expert advice and support. Additionally, they do not have a map that shows nearby clinics, pharmacies, or markets that sell sexual health products. Upon these points, I pinpointed distinctive features to include in Abla.</p>
@@ -162,6 +177,14 @@ function AblaModal({ show, onClose }) {
                     <li>Keep the app as privacy preserving as possible.</li>
                 </ol>
                 <img style={{ width: '50vh', display: 'block', margin: '2rem auto' }} src={abla_mockup}></img>
+                <h4>Wireframes</h4>
+                <p>Below are the wireframes for the Abla app, showcasing the main user flows and features. I created these wireframes to visualize the user experience and ensure that all necessary elements are included in the final design. In the end, I added additional small details to the user interface design.</p>
+                <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={abla_wireframe_1} alt="Abla Wireframe 1" />
+                <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={abla_wireframe_2} alt="Abla Wireframe 2" />
+                <img style={{ width: '25%', display: 'block', margin: '2rem auto' }} src={abla_wireframe_3} alt="Abla Wireframe 3" />
+                <h4>UI Design</h4>
+                <p>After creating the wireframes, I focused on the UI design to ensure a calm and friendly design. I chose the fonts and color palette keeping the target audience in mind. I aimed for a bubbly and approachable aesthetic, using soft colors and rounded shapes to create a sense of comfort and safety.</p>
+                <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={abla_ui} alt="Abla UI" />
             </div>
         </div>
     );
