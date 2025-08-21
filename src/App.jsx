@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import grad from './assets/mezuniyet_2.jpg'
 import github_logo from './assets/GitHub_Logo_White.png'
@@ -8,7 +8,6 @@ import Navbar from '../components/Navbar.jsx'
 import Projects from '../components/Projects.jsx'
 import CaseStudies from '../components/CaseStudies.jsx'
 import { Route, Routes } from 'react-router'
-import { Abla } from '../components/CaseStudies.jsx'
 
 function Home({ rightTransform, leftTransform }) {
   return(
@@ -128,11 +127,7 @@ function App() {
   return (
     <div className="app-container" style={styles}>
       <Navbar/>
-      <Routes>
-        <Route path="/personal-website/" element={<Home rightTransform={rightTransform} leftTransform={leftTransform} />} />
-        <Route path="/personal-website/Abla" element={<Abla />} />
-        {/* Add more routes here if needed */}
-      </Routes>
+      <Home rightTransform={rightTransform} leftTransform={leftTransform} />
     </div>
   )
 }
