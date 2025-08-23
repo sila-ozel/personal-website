@@ -7,7 +7,7 @@ import background from './assets/background_2.jpeg'
 import Navbar from '../components/Navbar.jsx'
 import Projects from '../components/Projects.jsx'
 import CaseStudies from '../components/CaseStudies.jsx'
-import { Route, Routes } from 'react-router'
+import Photos from '../components/Photos.jsx'
 
 function Home({ rightTransform, leftTransform }) {
   return(
@@ -45,11 +45,12 @@ function Home({ rightTransform, leftTransform }) {
             </div>
           </div>
         </div>
-        <div id='case-studies' className='case-studies-section'>
-          <CaseStudies/>
-        </div>
         <div id='projects' className='projects-section'>
+          <CaseStudies/>
           <Projects/>
+        </div>
+        <div id='photos' className='photos-section'>
+          <Photos/>
         </div>
         <div style={{ width: '90vw', margin: '0 auto', paddingTop: '10vh'}} className='contact' id='contact'>
           <h2>Contact Me</h2>

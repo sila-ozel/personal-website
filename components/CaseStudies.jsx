@@ -14,6 +14,147 @@ import abla_ui from '../projects/Abla_UI_2.png';
 import abla_wireframe_1 from '../projects/Abla_wireframe_1.png';
 import abla_wireframe_2 from '../projects/Abla_wireframe_2.png';
 import abla_wireframe_3 from '../projects/Abla_wireframe_3.png';
+import fonts from '../projects/Fonts.png';
+import characters from '../projects/Characters.png';
+import spriteSheet from '../projects/Characters.png'; // Add your sprite sheet path here
+
+function LucidDreamsModal({ show, onClose }) {
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+    const canvasRef = React.useRef(null);
+
+    React.useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    React.useEffect(() => {
+        if (!show) return;
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+        const img = new window.Image();
+        img.src = characters;
+
+        // Sprite frame info
+        const frameWidth = 32; // update to your sprite width
+        const frameHeight = 32; // update to your sprite height
+        const firstRowY = 0;
+        const secondRowY = frameHeight;
+
+        // Select frames: first 5 from row 1, first 3 from row 2
+        const frames = [
+            { x: 0 * frameWidth, y: firstRowY },
+            { x: 1 * frameWidth, y: firstRowY },
+            { x: 2 * frameWidth, y: firstRowY },
+            { x: 3 * frameWidth, y: firstRowY },
+            { x: 4 * frameWidth, y: firstRowY },
+            { x: 0 * frameWidth, y: secondRowY },
+            { x: 1 * frameWidth, y: secondRowY },
+            { x: 2 * frameWidth, y: secondRowY },
+        ];
+
+        let frameIndex = 0;
+        let animationId;
+        let forward = true;
+
+        function draw() {
+            ctx.clearRect(0, 0, frameWidth, frameHeight);
+            const frame = frames[frameIndex];
+            ctx.drawImage(img, frame.x, frame.y, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
+            if (frameIndex === frames.length - 1) forward = false;
+            if (frameIndex === 0) forward = true;
+
+            frameIndex = (frameIndex + (forward ? 1 : -1)) % frames.length;
+            animationId = requestAnimationFrame(() => setTimeout(draw, 120)); // ~8fps
+        }
+
+        img.onload = () => {
+            draw();
+        };
+
+        return () => {
+            cancelAnimationFrame(animationId);
+        };
+    }, [show]);
+
+    if (!show) return null;
+
+    return (
+        <div
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                background: 'rgba(66, 60, 60, 0.63)',
+                zIndex: 9999,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflowY: 'auto'
+            }}
+            onClick={onClose}
+        >
+            <div
+                style={{
+                    background: 'var(--background-color-dark)',
+                    color: 'var(--text-color-dark)',
+                    borderRadius: '15px',
+                    maxWidth: '95vw',
+                    maxHeight: '90vh',
+                    overflowY: 'auto',
+                    padding: '2rem',
+                    position: 'relative'
+                }}
+                onClick={e => e.stopPropagation()}
+            >
+                <button
+                    onClick={onClose}
+                    style={{
+                        position: 'absolute',
+                        top: '1rem',
+                        right: '1rem',
+                        background: 'transparent',
+                        border: 'none',
+                        fontSize: '2rem',
+                        color: '#fff',
+                        cursor: 'pointer'
+                    }}
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+                <h2>Lucid Dreams 🎮</h2>
+                {/* Add animated sprite canvas */}
+                <div style={{ margin: '1rem 0', textAlign: 'center' }}>
+                    <canvas
+                        ref={canvasRef}
+                        width={32}
+                        height={32}
+                        style={{ 
+                            borderRadius: '8px', 
+                            background: '#222',
+                            width: '128px',
+                            height: '128px',
+                            imageRendering: 'pixelated',
+                            imageRendering: '-moz-crisp-edges',
+                            imageRendering: 'crisp-edges'
+                        }}
+                    />
+                </div>
+                <h3>Overview 👓</h3>
+                <p>Lucid Dreams is a 2D desktop game that aims to provide players with a unique experience. The name Lucid Dreams comes from the fact that players can create custom levels using the game's level editor. They can choose from different tiles and drag&drop them onto the empty level to create their own levels, as if they are in a lucid dream.</p>
+                <h3>My Role 🧑🏻‍💻</h3>
+                <p>I came up with the game concept and was responsible for designing the user interface and game graphics of the game. I created characters, backgrounds, and tiles using Aseprite. I also implemented the character animations within the game.</p>
+                <h3>Assets Used 🖼️</h3>
+                <img src={fonts} alt="Fonts" style={{ width: '50%', height: 'auto' }} />
+                <img src={characters} alt="Characters" style={{ width: '50%', height: 'auto' }} />
+                
+            </div>
+        </div>
+    );
+}
 
 function AblaModal({ show, onClose }) {
     const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
@@ -194,6 +335,7 @@ function CaseStudies() {
     const [expandedStates, setExpandedStates] = React.useState({});
     const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
     const [showAblaModal, setShowAblaModal] = React.useState(false);
+    const [showModal, setShowModal] = React.useState(null);
     const settings = {
         dots: true,
         infinite: true,
@@ -261,16 +403,13 @@ function CaseStudies() {
                                     <h4>{project.alt}</h4>
                                 </div>
                                 <div className='col-4'>
-                                    {project.isAbla ? (
                                         <button
-                                            onClick={() => setShowAblaModal(true)}
+                                            onClick={() => setShowModal(project.alt)}
                                             style={{borderRadius:"5px", border: '1px solid #007bff', color: '#007bff', backgroundColor: 'transparent'}}
                                         >
                                             View Details
                                         </button>
-                                    ) : (
-                                        <span></span>
-                                    )}
+                                    
                                 </div>
                             </div>
                             <img
@@ -297,7 +436,8 @@ function CaseStudies() {
                     </div>
                 ))}
             </Slider>
-            <AblaModal show={showAblaModal} onClose={() => setShowAblaModal(false)} />
+            <AblaModal show={showModal === 'Abla'} onClose={() => setShowModal(null)} />
+            <LucidDreamsModal show={showModal === 'Lucid Dreams'} onClose={() => setShowModal(null)} />
         </div>
     );
 }
