@@ -15,10 +15,10 @@ function Home({ rightTransform, leftTransform, isMobile }) {
         <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '80vh', position: 'relative'}}>
           <div style={{margin: 'auto', display: 'block', paddingTop: '5%', overflow: 'hidden'}} className="row">
           <div className='col' style={leftTransform}>
-            {isMobile ? <p style={{textAlign: 'center', color: 'var(--text-sila)', fontSize: '10vw'}} className='tourney-header-thin'>SILA</p>: <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thin'>SILA</p>}
+            <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thin'>SILA</p>
           </div>
           <div className='col' style={rightTransform}>
-            {isMobile ? <p style={{textAlign: 'center', color: 'var(--text-sila)', fontSize: '10vw'}} className='tourney-header-thick'>OZEL</p>: <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thick'>OZEL</p>}
+            <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thick'>OZEL</p>
           </div>
         </div>
         </div>
