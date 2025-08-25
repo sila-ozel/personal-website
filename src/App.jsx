@@ -9,16 +9,16 @@ import Projects from '../components/Projects.jsx'
 import CaseStudies from '../components/CaseStudies.jsx'
 import Photos from '../components/Photos.jsx'
 
-function Home({ rightTransform, leftTransform }) {
+function Home({ rightTransform, leftTransform, isMobile }) {
   return(
     <div className="content">
         <div style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '80vh', position: 'relative'}}>
-          <div style={{paddingLeft: '25%', paddingRight: '25%', paddingTop: '15%', overflow: 'hidden'}} className="row">
+          <div style={{margin: 'auto', display: 'block', paddingTop: '5%', overflow: 'hidden'}} className="row">
           <div className='col' style={leftTransform}>
-            <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thin'>SILA</p>
+            {isMobile ? <p style={{textAlign: 'center', color: 'var(--text-sila)', fontSize: '10vw'}} className='tourney-header-thin'>SILA</p>: <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thin'>SILA</p>}
           </div>
           <div className='col' style={rightTransform}>
-            <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thick'>OZEL</p>
+            {isMobile ? <p style={{textAlign: 'center', color: 'var(--text-sila)', fontSize: '10vw'}} className='tourney-header-thick'>OZEL</p>: <p style={{textAlign: 'center', color: 'var(--text-sila)'}} className='tourney-header-thick'>OZEL</p>}
           </div>
         </div>
         </div>
@@ -55,6 +55,9 @@ function Home({ rightTransform, leftTransform }) {
         <div style={{ width: '90vw', margin: '0 auto', paddingTop: '10vh'}} className='contact' id='contact'>
           <h2>Contact Me</h2>
           <p style={{marginBottom: 0}}>If you would like to get in touch, feel free to reach out via email at <a href='mailto:sila.ozel.cs@gmail.com'>sila.ozel.cs@gmail.com</a>.</p>
+          <p>I'm always open to discussing new opportunities, collaborations, or just connecting! You can also give some feedback on my work.</p>
+          <img style={{maxWidth: '100%', height: 'auto', width: '20%'}} src='stressed_panda.JPG' alt='Stressed Panda' />
+          <p>I might be a bit stressed, but I'm always here to chat!</p>
         </div>
       </div>
   );
@@ -63,6 +66,7 @@ function Home({ rightTransform, leftTransform }) {
 function App() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [mode, setMode] = useState('dark');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const toggleMode = () => {
     setMode((prevMode) => (prevMode === 'dark' ? 'light' : 'dark'))
@@ -128,7 +132,7 @@ function App() {
   return (
     <div className="app-container" style={styles}>
       <Navbar/>
-      <Home rightTransform={rightTransform} leftTransform={leftTransform} />
+      <Home rightTransform={rightTransform} leftTransform={leftTransform} isMobile={isMobile} />
     </div>
   )
 }

@@ -12,9 +12,10 @@ function PhotoCard({photo}) {
                 alt={photo.alt}
                 style={{
                     width: '100%',
-                    height: '300px',
+                    height: '350px',
                     objectFit: 'cover',
-                    padding: '10px'
+                    padding: '10px',
+                    borderRadius: '15px'
                 }}
             />
         </div>
@@ -24,7 +25,6 @@ function PhotoCard({photo}) {
 
 function Photos() {
     const settings = {
-        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 3,

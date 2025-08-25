@@ -98,7 +98,7 @@ function Projects() {
                                 style={{
                                     width: '100%',
                                     height: '50%',
-                                    borderRadius: '10px'
+                                    borderRadius: '25px'
                                 }}
                             />
                             <p style={{ textAlign: 'justify' }}>

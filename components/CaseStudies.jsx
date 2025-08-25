@@ -16,7 +16,6 @@ import abla_wireframe_2 from '../projects/Abla_wireframe_2.png';
 import abla_wireframe_3 from '../projects/Abla_wireframe_3.png';
 import fonts from '../projects/Fonts.png';
 import characters from '../projects/Characters.png';
-import spriteSheet from '../projects/Characters.png'; // Add your sprite sheet path here
 
 function LucidDreamsModal({ show, onClose }) {
     const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
@@ -148,9 +147,9 @@ function LucidDreamsModal({ show, onClose }) {
                 <h3>My Role 🧑🏻‍💻</h3>
                 <p>I came up with the game concept and was responsible for designing the user interface and game graphics of the game. I created characters, backgrounds, and tiles using Aseprite. I also implemented the character animations within the game.</p>
                 <h3>Assets Used 🖼️</h3>
-                <img src={fonts} alt="Fonts" style={{ width: '50%', height: 'auto' }} />
-                <img src={characters} alt="Characters" style={{ width: '50%', height: 'auto' }} />
-                
+                <img src={fonts} alt="Fonts" style={{ height: '90%', width: 'auto' }} />
+                <img src={characters} alt="Characters" style={{ height: '80%', width: 'auto' }} />
+
             </div>
         </div>
     );
@@ -301,11 +300,11 @@ function AblaModal({ show, onClose }) {
                     <h2>User Journeys</h2>
                     <p>Below are the user journeys for each persona.</p>
                     <h3>Zeynep</h3>
-                    <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={zeynep_user_journey} alt="Zeynep User Journey" />
+                    <img style={{ height: '80vh', width: 'auto', display: 'block', margin: '2rem auto' }} src={zeynep_user_journey} alt="Zeynep User Journey" />
                     <h3>Yasemin</h3>
-                    <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={yasemin_user_journey} alt="Yasmin User Journey" />
+                    <img style={{ height: '80vh', width: 'auto', display: 'block', margin: '2rem auto' }} src={yasemin_user_journey} alt="Yasmin User Journey" />
                     <h3>Amy</h3>
-                    <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={amy_user_journey} alt="Amy User Journey" />
+                    <img style={{ height: '80vh', width: 'auto', display: 'block', margin: '2rem auto' }} src={amy_user_journey} alt="Amy User Journey" />
                 </div>
                 <h2>Solution 🛠️</h2>
                 <p>There are several femtech apps available that also touch on these topics. However, there are some gaps in the market. To my knowledge many of the period tracking apps do not have a built-in "Chat with a professional" feature. This is a crucial addition that could provide users with immediate access to expert advice and support. Additionally, they do not have a map that shows nearby clinics, pharmacies, or markets that sell sexual health products. Upon these points, I pinpointed distinctive features to include in Abla.</p>
@@ -320,12 +319,12 @@ function AblaModal({ show, onClose }) {
                 <img style={{ width: '50vh', display: 'block', margin: '2rem auto' }} src={abla_mockup}></img>
                 <h4>Wireframes</h4>
                 <p>Below are the wireframes for the Abla app, showcasing the main user flows and features. I created these wireframes to visualize the user experience and ensure that all necessary elements are included in the final design. In the end, I added additional small details to the user interface design.</p>
-                <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={abla_wireframe_1} alt="Abla Wireframe 1" />
-                <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={abla_wireframe_2} alt="Abla Wireframe 2" />
-                <img style={{ width: '25%', display: 'block', margin: '2rem auto' }} src={abla_wireframe_3} alt="Abla Wireframe 3" />
+                <img style={{ height: '80vh', width: 'auto', display: 'block', margin: '2rem auto' }} src={abla_wireframe_1} alt="Abla Wireframe 1" />
+                <img style={{ height: '80vh', width: 'auto', display: 'block', margin: '2rem auto' }} src={abla_wireframe_2} alt="Abla Wireframe 2" />
+                <img style={{ height: '50vh', width: 'auto', display: 'block', margin: '2rem auto' }} src={abla_wireframe_3} alt="Abla Wireframe 3" />
                 <h4>UI Design</h4>
                 <p>After creating the wireframes, I focused on the UI design to ensure a calm and friendly design. I chose the fonts and color palette keeping the target audience in mind. I aimed for a bubbly and approachable aesthetic, using soft colors and rounded shapes to create a sense of comfort and safety.</p>
-                <img style={{ width: '80%', display: 'block', margin: '2rem auto' }} src={abla_ui} alt="Abla UI" />
+                <img style={{ height: '150vh', width: 'auto', display: 'block', margin: '2rem auto' }} src={abla_ui} alt="Abla UI" />
             </div>
         </div>
     );
@@ -403,12 +402,17 @@ function CaseStudies() {
                                     <h4>{project.alt}</h4>
                                 </div>
                                 <div className='col-4'>
-                                        <button
+                                        {isMobile ? <button
+                                            onClick={() => setShowModal(project.alt)}
+                                            style={{fontSize: '8px', borderRadius:"5px", border: '1px solid #007bff', color: '#007bff', backgroundColor: 'transparent'}}
+                                        >
+                                            View Details
+                                        </button>: <button
                                             onClick={() => setShowModal(project.alt)}
                                             style={{borderRadius:"5px", border: '1px solid #007bff', color: '#007bff', backgroundColor: 'transparent'}}
                                         >
                                             View Details
-                                        </button>
+                                        </button>}
                                     
                                 </div>
                             </div>
