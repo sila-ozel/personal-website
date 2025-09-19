@@ -1,5 +1,5 @@
 # Personal Website
-This is my personal website. Check [here](https://sila-ozel.github.io/personal-website/)!
+This is my personal website. Check [here](https://sila-ozel.github.io/portfolio/)!
 
 For favicon (in public/favicon-32x32.png) licensing read the following:
 
