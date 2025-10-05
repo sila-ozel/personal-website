@@ -16,6 +16,142 @@ import abla_wireframe_2 from '../projects/Abla_wireframe_2.png';
 import abla_wireframe_3 from '../projects/Abla_wireframe_3.png';
 import fonts from '../projects/Fonts.png';
 import characters from '../projects/Characters.png';
+import palmetto_1 from '../projects/palmetto1.png';
+import palmetto_2 from '../projects/palmetto2.png';
+import palmetto_3 from '../projects/palmetto3.png';
+import lumina_cordea from '../projects/LuminaCordea.png';
+
+function LuminaCordeaModal({ show, onClose }) {
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+    React.useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    
+    if (!show) return null;
+    return(
+        <div
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                background: 'rgba(66, 60, 60, 0.63)',
+                zIndex: 9999,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflowY: 'auto'
+            }}
+            onClick={onClose}
+        >
+            <div
+                style={{
+                    background: 'var(--background-color-dark)',
+                    color: 'var(--text-color-dark)',
+                    borderRadius: '15px',
+                    maxWidth: '95vw',
+                    maxHeight: '90vh',
+                    overflowY: 'auto',
+                    padding: '2rem',
+                    position: 'relative'
+                }}
+                onClick={e => e.stopPropagation()}
+            >
+                <button
+                    onClick={onClose}
+                    style={{
+                        position: 'absolute',
+                        top: '1rem',
+                        right: '1rem',
+                        background: 'transparent',
+                        border: 'none',
+                        fontSize: '2rem',
+                        color: '#fff',
+                        cursor: 'pointer'
+                    }}
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+                <h2>Lumina Cordea UX Audit</h2>
+                <h3>Overview 👓</h3>
+                <p>Lumina Cordea is a perfume brand based in Turkey. They are known for the Sombre de Bleu fragrance (Atatürk'ün parfümü). I made some purchases from their website and I found the user experience to be quite poor. However, the user interface was visually appealing. I conducted a heuristic UX audit to identify the usability issues. I then created a report on the findings and suggested improvements. I tried to contact the company to share my findings, but I did not receive a response. Still, I sent an email to the company with the report attached. You can view the findings and suggestions below.</p>
+                <h3>Findings 🔍</h3>
+
+            </div>
+        </div>
+    );
+}
+
+function PalmettoModal({show, onClose}) {
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+    React.useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    
+    if (!show) return null;
+    return(
+        <div
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                background: 'rgba(66, 60, 60, 0.63)',
+                zIndex: 9999,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflowY: 'auto'
+            }}
+            onClick={onClose}
+        >
+            <div
+                style={{
+                    background: 'var(--background-color-dark)',
+                    color: 'var(--text-color-dark)',
+                    borderRadius: '15px',
+                    maxWidth: '95vw',
+                    maxHeight: '90vh',
+                    overflowY: 'auto',
+                    padding: '2rem',
+                    position: 'relative'
+                }}
+                onClick={e => e.stopPropagation()}
+            >
+                <button
+                    onClick={onClose}
+                    style={{
+                        position: 'absolute',
+                        top: '1rem',
+                        right: '1rem',
+                        background: 'transparent',
+                        border: 'none',
+                        fontSize: '2rem',
+                        color: '#fff',
+                        cursor: 'pointer'
+                    }}
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+                <h2>Palmetto</h2>
+                <h3>Overview 👓</h3>
+                <p>Palmetto is a mini project I worked on myself. It is a website design for a fictional company that sells party supplies. I used goodbrief.io to generate a brief and then designed the website using Figma. The design includes a homepage, product details page, contact us page, and privacy policy page.</p>
+                <h3>Brief ✍️</h3>
+                <h5>Company Name:</h5> <p>Palmetto</p> <h5>Company Description:</h5> <p>We are a big chain of stores that sells party supplies. Our main product stands out because of its reputation and convenience. Our target audience is couples. We want to convey a sense of nostalgia, while at the same time being professional.</p> <h5>Job Description</h5> <p>You must create a website that will mainly spread brand awareness. The goal is to make the website easy to navigate. Besides the landing page, the website will need a contact page, product pages and a privacy policy page. The landing page should have a Contact Us section. There should be a call to action to get users to view the catalogue. They would prefer a old-fashioned design, and would like you to use the brand color, which is black. Take into account the client's preferences and values.</p> <h5>Deadline:</h5> <p>1 week</p>
+                <h3>Design Process 🎨</h3>
+                <p>I started by researching other party supply websites to get an idea of the industry standards and best practices. I also looked for inspiration from vintage and retro designs to incorporate the nostalgic element that the client wanted. After gathering inspiration, I created wireframes for the main pages of the website, including the homepage, product details page, contact us page, and privacy policy page. Once I was satisfied with the wireframes, I moved on to creating high-fidelity mockups in Figma. I chose a color palette that included black as the primary color, with complementary colors to add visual interest. I also selected fonts that conveyed a sense of nostalgia while remaining professional and easy to read.</p>
+            </div>
+        </div>
+    );
+}
 
 function LucidDreamsModal({ show, onClose }) {
     const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
@@ -377,6 +513,16 @@ function CaseStudies() {
             caption: 'Lucid Dreams is a 2D game project developed by a team of five. I was responsible for the user interface related tasks, including character design/animation, background art, fonts used in the game, and overall visual aesthetics.'
         },
         {
+            src: palmetto_1,
+            alt: 'Palmetto',
+            caption: 'Palmetto is a mini project I worked on myself. It is a website design for a fictional company that sells party supplies. I used goodbrief.io to generate a brief and then designed the website using Figma. The design includes a homepage, product details page, contact us page, and privacy policy page.'
+        },
+        {
+            src: lumina_cordea,
+            alt: 'Lumina Cordea UX Audit',
+            caption: 'Lumina Cordea is a perfume brand based in Turkey. They are known for the Sombre de Bleu fragrance (Atatürk\'ün parfümü). I made some purchases from their website and I found the user experience to be quite poor. However, the user interface was visually appealing. I conducted a heuristic UX audit to identify the usability issues. I then created a report on the findings and suggested improvements. I tried to contact the company to share my findings, but I did not receive a response. Still, I sent an email to the company with the report attached. You can view the findings and suggestions by clicking on the "View Details" button.',
+        },
+        {
             src: parameter_desktop,
             alt: 'Para-Meter',
             caption: 'Para-Meter is my capstone project for my computer science degree. It was developed as a team of four. I was mainly responsible for the user interface design and implementation. We used Figma to design our web application.'
@@ -421,8 +567,10 @@ function CaseStudies() {
                                 src={project.src}
                                 alt={project.alt}
                                 style={{
-                                    width: '100%',
-                                    height: '50%'
+                                    width: 'auto',
+                                    maxWidth: '100%',
+                                    height: '200px',
+                                    margin: 'auto'
                                 }}
                             />
                             <p style={{ textAlign: 'justify' }}>
@@ -442,6 +590,8 @@ function CaseStudies() {
             </Slider>
             <AblaModal show={showModal === 'Abla'} onClose={() => setShowModal(null)} />
             <LucidDreamsModal show={showModal === 'Lucid Dreams'} onClose={() => setShowModal(null)} />
+            <PalmettoModal show={showModal === 'Palmetto'} onClose={() => setShowModal(null)} />
+            <LuminaCordeaModal show={showModal === 'Lumina Cordea UX Audit'} onClose={() => setShowModal(null)} />
         </div>
     );
 }
